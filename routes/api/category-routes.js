@@ -10,6 +10,9 @@ router.get('/', (req, res) => {
     include: Product
   }).then(categories => {
     res.json(categories);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   })
 });
 
@@ -20,6 +23,9 @@ router.get('/:id', (req, res) => {
     include: Product
   }).then(category => {
     res.json(category);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   })
 });
 
@@ -29,6 +35,9 @@ router.post('/', (req, res) => {
     category_name: req.body.category_name,
   }).then(newCategory => {
     res.json(newCategory);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   })
 });
 
@@ -43,6 +52,9 @@ router.put('/:id', (req, res) => {
   }
   ).then(category => {
     res.json(category);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   })
 });
 
@@ -53,6 +65,9 @@ router.delete('/:id', (req, res) => {
     }
   }).then(category => {
     res.json(category);
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json(err);
   })
 });
 
